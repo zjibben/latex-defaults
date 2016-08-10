@@ -1,0 +1,65 @@
+\ProvidesPackage{mypackages}
+
+\usepackage{indentfirst}                      %enforces indents after section headings
+
+% web/mailto/ref links ------------------------------------------------
+\usepackage[hidelinks,
+  %% colorlinks=true,
+  %% linkcolor=cyan,
+  %% citecolor=cyan,
+  %% urlcolor=cyan,
+  linktoc=all]{hyperref}
+\usepackage{url}
+
+% bibliography ------------------------------------------------
+\usepackage[backend=biber,sorting=nyt,maxcitenames=2,maxbibnames=10,style=numeric-comp,useprefix=true]{biblatex}
+\renewbibmacro{in:}{                          %remove "In: " from bibliography
+  \ifentrytype{article}{}{
+    \printtext{\bibstring{in}\intitlepunct}}}
+\addbibresource{bibliography.bib}
+
+% math ------------------------------------------------
+\usepackage{amsmath,amssymb}                  %additional symbol libraries
+\usepackage{ulem}                             %Tensors underlining (may mess up emph?)
+
+% figures & tables ------------------------------------------------
+\usepackage{graphicx,wrapfig,float}           %allow graphics, text wrapped around figures
+\usepackage[justification=centering]{caption} %centered captions
+\usepackage{subcaption}                       %subfigures
+\usepackage{booktabs,multirow}                %more advanced tables
+\graphicspath{{figures/}}                     %figure directory
+\usepackage[usenames,dvipsnames]{xcolor}      %allow color figures and syntax highlighting
+\usepackage{tikz,pgfplots}                    %create figures/graphics manually
+
+% source code --------------------------------------------------------
+\usepackage{listings,verbatim}
+\lstset{language=fortran,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{Thistle},
+  commentstyle=\color{Bittersweet},
+  stringstyle=\color{RedViolet},
+  numbers=left,
+  numberstyle=\footnotesize\color{Blue}, 
+  stepnumber=2,
+  numbersep=10pt}
+\usepackage{algpseudocode,algorithm}
+
+% other ------------------------------------------------
+%\usepcackage{color,stfloats,ifthen}
+\usepackage{ifxetex,ifluatex,etoolbox}        %check for advanced compiler
+\usepackage[capitalize]{cleveref}
+
+% *xelatex only* ------------------------------------------------
+\ifxetex
+\usepackage{fontspec}                         %fonts
+\usepackage{unicode-math}                     %support direct math input
+
+\setmathfont[math-style=ISO]{xits-math.otf}
+% Asana Math, Latin Modern Math, xits-math.otf
+
+\setmainfont[Ligatures=TeX]{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+% GaramondNo8-Reg, Linux Libertine O, Linux Biolinum O, EBGaramond, TeX Gyre Pagella
+\fi %\ifxelatex
+
+\endinput

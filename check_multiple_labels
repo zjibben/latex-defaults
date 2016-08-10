@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grep -oh "\\\\label{[A-Za-Z: ]*}" *.tex

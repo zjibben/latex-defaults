@@ -1,0 +1,109 @@
+\ProvidesPackage{mycommands}
+
+% generalized eqref
+% since cleveref doesn't use Oxford commas and fancyref has some conflicts with memoir
+% based on:
+%   http://tex.stackexchange.com/questions/19693/arguments-of-custom-commands-as-comma-separated-list
+%   http://tex.stackexchange.com/questions/83148/recursively-defined-macros-in-tex
+
+\renewcommand{\eqref}[1]{%
+  \genEqLstI(#1,,)%     insert two blank args to help logic
+}
+
+\def\genEqLstI(#1,#2,#3){%
+  \ifx \relax#2\relax%  if #2 and #3 are empty...
+  Eq.~(\ref{eq:#1})%    only one arg was given
+  \else%                multiple args were given
+  Eqs.~(\ref{eq:#1})\genEqLstII(#2,#3)%
+  \fi%
+}
+
+\def\genEqLstII(#1,#2,#3){%
+  \ifx \relax#2\relax%  if #2 and #3 are empty...
+  ~and (\ref{eq:#1})%   two args were given
+  \else%                we have a list of args
+  , (\ref{eq:#1})\genEqLstLong(#2,#3)%
+  \fi%
+}
+
+\def\genEqLstLong(#1,#2,#3){%
+  \ifx \relax#2\relax%  if #2 and #3 are empty...
+  , and (\ref{eq:#1})%  finished the list
+  \else%                keep going
+  , (\ref{eq:#1})\genEqLstLong(#2,#3)%
+  \fi%
+}
+
+% other shortcuts
+\AtBeginDocument{
+  % in-text shortcuts
+  \newcommand{\subsubsubsection}[1]{\paragraph{#1 \\}}
+  \newcommand{\subsubsubsubsection}[1]{\subparagraph{#1 \\}}
+
+  \newcommand  {\tsup  }[1]{$^\text{#1}$}           % superscripts
+  \newcommand  {\st    }   {$^\text{st}$~}
+  \renewcommand{\th    }   {$^\text{th}$~}
+  \newcommand  {\nd    }   {$^\text{nd}$~}
+  \newcommand  {\rd    }   {$^\text{rd}$~}
+  %\renewcommand{\eqref }[1]{Eq.~(\ref{eq:#1})}      % references
+  \newcommand  {\figref}[1]{Fig.~\ref{fig:#1}}
+  \newcommand  {\tabref}[1]{Table~\ref{tab:#1}}
+  \newcommand  {\lsref }[1]{List.~\ref{ls:#1}}
+  \newcommand  {\alref }[1]{Alg.~\ref{al:#1}}
+  \newcommand  {\apref }[1]{Ap.~\ref{ap:#1}}
+  \newcommand  {\chref }[1]{Ch.~\ref{ch:#1}}
+  \newcommand  {\secref }[1]{Sec.~\ref{sec:#1}}
+  
+  % math-mode shortcuts
+  %\newcommand  {\dd}{\mathop{}\!\mathrm{d}}
+  \newcommand  {\dd}{\mathrm{d}}
+  \newcommand  {\abs}[1]{\left| #1 \right|}
+  \newcommand  {\√}[1]{ \sqrt{#1} }
+  \newcommand  {\∪} {\bigcup}
+  
+  \newcommand  {\A} {\mathcal{A}}
+  \newcommand  {\I} {\mathcal{I}}
+  \newcommand  {\K} {\mathcal{K}}
+  \renewcommand{\T} {\mathcal{T}}
+  \newcommand  {\W} {\mathcal{W}}
+  \newcommand  {\X} {\mathcal{X}}
+  
+  \newcommand  {\CFL} {\mathrm{CFL}}
+  
+  \renewcommand{\div}{\nabla\cdot}
+  \newcommand  {\grad}{\nabla}
+  \newcommand  {\atanh}{\mathrm{atanh}}
+  \renewcommand{\vec}[1]{\mathbf{#1}}
+  \renewcommand{\v  }[1]{\mathbf{#1}}
+  \newcommand  {\nvec}[1]{\hat{\vec{#1}}}
+  \newcommand  {\nv  }[1]{\hat{\vec{#1}}}
+  
+  \newcommand  {\Dpart}[2]{\dfrac{\partial #1}{\partial #2}}
+  \newcommand  {\Dfull}[2]{\frac{\dd #1 }{\dd #2}}
+  \newcommand  {\Dmat}[1]{\frac{\mathrm{D} #1}{\mathrm{D}t}}
+  
+  \newcommand  {\integrate  }[4] {\int_{#1}^{#2}\! #3 \;\dd #4}
+  \newcommand  {\iintegrate }[7] {\int_{#1}^{#2}\!\int_{#3}^{#4}\! #5 \;\dd #6 \dd #7}
+  \newcommand  {\iiintegrate}[9]{%
+    \def\argI{{#1}}%
+    \def\argII{{#2}}%
+    \def\argIII{{#3}}%
+    \def\argIV{{#4}}%
+    \def\argV{{#5}}%
+    \def\argVI{{#6}}%
+    \def\argVII{{#7}}%
+    \def\argVIII{{#8}}%
+    \def\argIX{{#9}}%
+    \iiintegratecontd}
+  \newcommand  {\iiintegratecontd}[1]{
+    \int_{\argI}^{\argII}\!\int_{\argIII}^{\argIV}\!\int_{\argV}^{\argVI}\!
+    \argVII
+    \;\dd \argVIII \dd \argIX \dd #1 }
+  \newcommand  {\ointegrate}[3]{\oint_{#1} #2 \,\cdot\dd\nvec{#3}}
+  \newcommand  {\ooverline}[1]{ \overline{\overline{#1}} }
+  \newcommand  {\wtilde}[1]{\widetilde{#1}}
+  \newcommand  {\where    }{\text{where}\quad}
+  \renewcommand{\~}{\ifmmode\sim\else$\sim$\fi}
+}
+
+\endinput
