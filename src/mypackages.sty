@@ -12,7 +12,7 @@
 \usepackage{url}
 
 % bibliography
-\usepackage[backend=biber,sorting=nyt,maxcitenames=2,maxbibnames=10,
+\usepackage[backend=biber,sorting=nyt,maxcitenames=2,maxnames=3,maxbibnames=99,
 style=numeric-comp,useprefix=true]{biblatex}
 \renewbibmacro{in:}{                          %remove "In: " from bibliography
   \ifentrytype{article}{}{
@@ -20,7 +20,7 @@ style=numeric-comp,useprefix=true]{biblatex}
 \addbibresource{bibliography.bib}
 
 % math
-\usepackage{amsmath,amssymb}                  %additional symbol libraries
+\usepackage{amsmath,amssymb,mathtools}        %additional symbol libraries
 \usepackage{ulem}                             %Tensors underlining (may mess up emph?)
 
 % figures & tables
@@ -55,7 +55,7 @@ style=numeric-comp,useprefix=true]{biblatex}
 \usepackage{fontspec}                         %fonts
 \usepackage{unicode-math}                     %support direct math input
 
-\setmathfont[math-style=ISO]{xits-math.otf}
+\setmathfont[math-style=ISO]{XITS Math}
 % Asana Math, Latin Modern Math, xits-math.otf
 
 \setmainfont[Ligatures=TeX]{Linux Libertine O}
