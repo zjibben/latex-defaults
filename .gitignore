@@ -1,2 +1,9 @@
 *~
-auto/*
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.xml
+src/auto/*

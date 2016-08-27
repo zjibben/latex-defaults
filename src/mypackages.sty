@@ -2,7 +2,7 @@
 
 \usepackage{indentfirst}                      %enforces indents after section headings
 
-% web/mailto/ref links ------------------------------------------------
+% web/mailto/ref links
 \usepackage[hidelinks,
   %% colorlinks=true,
   %% linkcolor=cyan,
@@ -11,18 +11,19 @@
   linktoc=all]{hyperref}
 \usepackage{url}
 
-% bibliography ------------------------------------------------
-\usepackage[backend=biber,sorting=nyt,maxcitenames=2,maxbibnames=10,style=numeric-comp,useprefix=true]{biblatex}
+% bibliography
+\usepackage[backend=biber,sorting=nyt,maxcitenames=2,maxbibnames=10,
+style=numeric-comp,useprefix=true]{biblatex}
 \renewbibmacro{in:}{                          %remove "In: " from bibliography
   \ifentrytype{article}{}{
     \printtext{\bibstring{in}\intitlepunct}}}
 \addbibresource{bibliography.bib}
 
-% math ------------------------------------------------
+% math
 \usepackage{amsmath,amssymb}                  %additional symbol libraries
 \usepackage{ulem}                             %Tensors underlining (may mess up emph?)
 
-% figures & tables ------------------------------------------------
+% figures & tables
 \usepackage{graphicx,wrapfig,float}           %allow graphics, text wrapped around figures
 \usepackage[justification=centering]{caption} %centered captions
 \usepackage{subcaption}                       %subfigures
@@ -31,7 +32,7 @@
 \usepackage[usenames,dvipsnames]{xcolor}      %allow color figures and syntax highlighting
 \usepackage{tikz,pgfplots}                    %create figures/graphics manually
 
-% source code --------------------------------------------------------
+% source code
 \usepackage{listings,verbatim}
 \lstset{language=fortran,
   basicstyle=\small\ttfamily,
@@ -44,12 +45,12 @@
   numbersep=10pt}
 \usepackage{algpseudocode,algorithm}
 
-% other ------------------------------------------------
+% other
 %\usepcackage{color,stfloats,ifthen}
 \usepackage{ifxetex,ifluatex,etoolbox}        %check for advanced compiler
 \usepackage[capitalize]{cleveref}
 
-% *xelatex only* ------------------------------------------------
+% xelatex settings
 \ifxetex
 \usepackage{fontspec}                         %fonts
 \usepackage{unicode-math}                     %support direct math input
@@ -60,6 +61,6 @@
 \setmainfont[Ligatures=TeX]{Linux Libertine O}
 \setsansfont{Linux Biolinum O}
 % GaramondNo8-Reg, Linux Libertine O, Linux Biolinum O, EBGaramond, TeX Gyre Pagella
-\fi %\ifxelatex
+\fi
 
 \endinput

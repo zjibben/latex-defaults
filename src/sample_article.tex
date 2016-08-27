@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{article_defaults}
+
+%\fullpagetitle{Sample LaTeX Article}
+\toptitle{Sample LaTeX Article}
+\author{Z. Jibben}
+\date{\today}
+\abstract{Sample abstract.}
+
+\begin{document}
+\maketoptitle
+
+\section{Introduction}
+Here is some sample text, citing the work of \textcite{Nobody}, and displaying the incompressible Navier-Stokes equations.
+\begin{gather}
+  \Dpart{\v{u}}{t} + \v{u}\cdot\nabla\v{u} = -\frac{1}{\rho}\nabla p + \frac{1}{\rho}\nabla\cdot(\mu(\nabla\v{u}+\nabla^\mathrm{T}\v{u})) + \v{g}
+  \\
+  \nabla\cdot\v{u} = 0
+\end{gather}
+
+
+\printbibliography[]
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
