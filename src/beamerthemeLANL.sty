@@ -1,0 +1,95 @@
+\mode<presentation>
+
+\useoutertheme{infolines}              %start with the infolines/rounded themes
+\useinnertheme{rounded}
+\setbeamertemplate{headline}{}         %remove top bar
+\beamertemplatenavigationsymbolsempty  %remove navigation buttons
+
+% define colors
+\definecolor{pacificorange}{cmyk}{.15,.45,1,0}
+\definecolor{pacificgray}{cmyk}{0,.15,.35,.60}
+\definecolor{pacificlgray}{cmyk}{0,0,.2,.4}
+\definecolor{pacificcream}{cmyk}{.05,.05,.15,0}
+\definecolor{deepyellow}{cmyk}{0,.17,.80,0}
+\definecolor{lightblue}{cmyk}{.49,.01,0,0}
+\definecolor{lightbrown}{cmyk}{.09,.15,.34,0}
+\definecolor{deepviolet}{cmyk}{.79,1,0,.15}
+\definecolor{deeporange}{cmyk}{0,.59,1,18}
+\definecolor{dustyred}{cmyk}{0,.7,.45,.4}
+\definecolor{grassgreen}{RGB}{92,135,39}
+\definecolor{pacificblue}{RGB}{59,110,143}
+\definecolor{pacificgreen}{cmyk}{.15,0,.45,.30}
+\definecolor{deepblue}{cmyk}{1,.57,0,2}
+\definecolor{turquoise}{cmyk}{.43,0,.24,0}
+\definecolor{blue}{rgb}{0,0,0.8}
+\definecolor{green}{rgb}{0,0.6,0}
+\definecolor{red}{rgb}{0.8,0,0}
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{gold}{RGB}{243,237,143}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{navyblue}{RGB}{0,0,128}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+% set defaults
+% logos
+\logo{\includegraphics[height=1cm]{figures/LANL_logo}}
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{figures/LANL_logo_bg}}
+
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{date}{size=\large}
+\setbeamerfont{institute}{size=\large,series=\scshape}
+\setbeamerfont{example text}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{framesubtitle}{series=\mdseries,size=\large}
+\setbeamerfont{section}{series=\bfseries}
+\setbeamerfont{title}{shape=\scshape,series=\bfseries}
+
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{alerted text}{fg=gold}
+
+\setbeamercolor*{palette primary}{fg=white,bg=pacificblue!80!black}
+\setbeamercolor*{palette secondary}{fg=white,bg=pacificblue!60!orange}
+\setbeamercolor*{palette tertiary}{fg=white,bg=gold!60!black}
+%\setbeamercolor*{palette quaternary}{fg=gold,bg=pacificblue!20!orange}
+
+%\setbeamercolor*{sidebar}{fg=pacificblue,bg=gold}
+%\setbeamercolor*{palette sidebar primary}{fg=gold!10!black}
+%\setbeamercolor*{palette sidebar secondary}{fg=white}
+%\setbeamercolor*{palette sidebar tertiary}{fg=gold!50!black}
+%\setbeamercolor*{palette sidebar quaternary}{fg=pacificblue!10!orange}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+\setbeamercolor{frametitle}{bg=pacificblue}
+\setbeamercolor{frametitle right}{bg=pacificblue}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\setbeamercolor*{block title}{bg=pacificblue,fg=gold}
+\setbeamercolor*{block body}{bg=pacificblue,fg=black}
+
+\setbeamercolor*{block title alerted}{bg=pacificblue,fg=gold}
+\setbeamercolor*{block body alerted}{bg=gold,fg=black}
+
+\setbeamercolor*{block title example}{bg=white,fg=black}
+\setbeamercolor*{block body example}{bg=white,fg=black}
+
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{institute}{fg=white}
+\setbeamercolor{date}{fg=white}
+
+\setbeamerfont{block title}{size={}}
+
+% define bullets
+\setbeamertemplate{itemize item}{\color{grassgreen}$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{grassgreen}\raisebox{0.3ex}{\scalebox{0.6}{$\blacktriangleright$}}}
+\setbeamertemplate{itemize subsubitem}{\color{grassgreen}$-$}
+
+\setbeamercolor{item projected}{bg=grassgreen}
+\setbeamertemplate{enumerate items}[circle]
+
+% make subitems a,b,c,... inside circles
+\setbeamertemplate{enumerate subitem}{ {\color{grassgreen}\raisebox{-0.6ex}{\scalebox{2.2}{$\bullet$}}} \hspace{-2.25ex}{\color{black}\small\alph{enumii}}}
+
+\mode
+<all>

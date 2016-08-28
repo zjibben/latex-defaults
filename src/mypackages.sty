@@ -2,15 +2,6 @@
 
 \usepackage{indentfirst}                      %enforces indents after section headings
 
-% web/mailto/ref links
-\usepackage[hidelinks,
-  %% colorlinks=true,
-  %% linkcolor=cyan,
-  %% citecolor=cyan,
-  %% urlcolor=cyan,
-  linktoc=all]{hyperref}
-\usepackage{url}
-
 % bibliography
 \usepackage[backend=biber,sorting=nyt,maxcitenames=2,maxnames=3,maxbibnames=99,
 style=numeric-comp,useprefix=true]{biblatex}
@@ -29,7 +20,6 @@ style=numeric-comp,useprefix=true]{biblatex}
 \usepackage{subcaption}                       %subfigures
 \usepackage{booktabs,multirow}                %more advanced tables
 \graphicspath{{figures/}}                     %figure directory
-\usepackage[usenames,dvipsnames]{xcolor}      %allow color figures and syntax highlighting
 \usepackage{tikz,pgfplots}                    %create figures/graphics manually
 
 % source code
@@ -48,6 +38,8 @@ style=numeric-comp,useprefix=true]{biblatex}
 % other
 %\usepcackage{color,stfloats,ifthen}
 \usepackage{ifxetex,ifluatex,etoolbox}        %check for advanced compiler
+\usepackage{enumerate}
+\usepackage[english]{datetime2}
 \usepackage[capitalize]{cleveref}
 
 % xelatex settings

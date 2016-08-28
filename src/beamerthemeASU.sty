@@ -1,0 +1,111 @@
+\mode<presentation>
+
+\useoutertheme{infolines}              %favorites: infolines, split, shadow
+\useinnertheme{rounded}
+\setbeamertemplate{headline}{}         %remove top bar
+\beamertemplatenavigationsymbolsempty  %remove navigation buttons
+
+% define colors
+\definecolor{hughesblue}{rgb}{.9,.9,1}
+\definecolor{pacificorange}{cmyk}{.15,.45,1,0}
+\definecolor{pacificgray}{cmyk}{0,.15,.35,.60}
+\definecolor{pacificlgray}{cmyk}{0,0,.2,.4}
+\definecolor{pacificcream}{cmyk}{.05,.05,.15,0}
+\definecolor{deepyellow}{cmyk}{0,.17,.80,0}
+\definecolor{lightblue}{cmyk}{.49,.01,0,0}
+\definecolor{lightbrown}{cmyk}{.09,.15,.34,0}
+\definecolor{deepviolet}{cmyk}{.79,1,0,.15}
+\definecolor{deeporange}{cmyk}{0,.59,1,18}
+\definecolor{dustyred}{cmyk}{0,.7,.45,.4}
+\definecolor{grassgreen}{RGB}{92,135,39}
+\definecolor{pacificblue}{RGB}{59,110,143}
+\definecolor{pacificgreen}{cmyk}{.15,0,.45,.30}
+\definecolor{deepblue}{cmyk}{1,.57,0,2}
+\definecolor{turquoise}{cmyk}{.43,0,.24,0}
+\definecolor{blue}{rgb}{0,0,0.8}
+\definecolor{green}{rgb}{0,0.6,0}
+\definecolor{red}{rgb}{0.8,0,0}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{navyblue}{RGB}{0,0,128}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+% ASU colors
+\definecolor{maroon}  {RGB}{153,0,51}
+\definecolor{gold}    {RGB}{255,179,16}
+\definecolor{forest}  {RGB}{86,142,20}
+\definecolor{cyan}    {RGB}{0,142,214}
+\definecolor{mustard} {RGB}{244,124,0}
+\definecolor{offblack}{RGB}{15,15,20}
+\definecolor{gray1}   {RGB}{79,85,87}
+\definecolor{gray2}   {RGB}{175,165,147}
+\definecolor{offwhite}{RGB}{245,245,250}
+
+
+% set defaults
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{figures/interfaceBG.pdf}}
+\logo{\includegraphics[height=1cm]{ASU_logo.pdf}}
+
+\setbeamerfont{author}{size=\large,series=\bfseries}
+\setbeamerfont{date}{size=\large}
+\setbeamerfont{institute}{size=\large,series=\scshape}
+\setbeamerfont{example text}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{framesubtitle}{series=\mdseries,size=\large}
+\setbeamerfont{section}{series=\bfseries}
+\setbeamerfont{title}{shape=\scshape,series=\bfseries}
+
+\setbeamercolor{normal text}{fg=offwhite}
+\setbeamercolor{alerted text}{fg=gold}
+
+\setbeamercolor*{palette primary}{fg=offwhite,bg=maroon} %pacificblue!80!black}
+\setbeamercolor*{palette secondary}{fg=offwhite,bg=gray1}
+\setbeamercolor*{palette tertiary}{fg=offblack,bg=gold}
+%\setbeamercolor*{palette quaternary}{fg=gold,bg=pacificblue!20!orange}
+
+%\setbeamercolor*{sidebar}{fg=pacificblue,bg=gold}
+%\setbeamercolor*{palette sidebar primary}{fg=gold!10!black}
+%\setbeamercolor*{palette sidebar secondary}{fg=white}
+%\setbeamercolor*{palette sidebar tertiary}{fg=gold!50!black}
+%\setbeamercolor*{palette sidebar quaternary}{fg=pacificblue!10!orange}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+\setbeamercolor{frametitle}{bg=maroon}
+%\setbeamercolor{frametitle right}{bg=pacificblue}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\setbeamercolor*{block title}{bg=pacificblue,fg=gold}
+\setbeamercolor*{block body}{bg=pacificblue,fg=offblack}
+
+\setbeamercolor*{block title alerted}{bg=pacificblue,fg=gold}
+\setbeamercolor*{block body alerted}{bg=gold,fg=offblack}
+
+\setbeamercolor*{block title example}{bg=white,fg=offblack}
+\setbeamercolor*{block body example}{bg=white,fg=offblack}
+
+\setbeamercolor{author}{fg=offwhite}
+\setbeamercolor{institute}{fg=offwhite}
+\setbeamercolor{date}{fg=offwhite}
+
+\setbeamerfont{block title}{size={}}
+\setbeamerfont{caption}{size=\normalsize}
+
+% define bullets
+%\newenvironment{grassgreenitemize}{\setbeamertemplate{itemize item}{\textcolor{grassgreen}{$\bullet$}} \begin{itemize}}{\end{itemize}}
+\setbeamertemplate{itemize item}{\color{gold}$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{gold}\raisebox{0.3ex}{\scalebox{0.6}{$\blacktriangleright$}}}
+\setbeamertemplate{itemize subsubitem}{\color{gold}$-$}
+
+\setbeamercolor{item projected}{fg=offblack,bg=gold}
+\setbeamertemplate{enumerate items}[circle]
+
+% make subitems a,b,c,... inside circles
+\setbeamertemplate{enumerate subitem}{ {\color{gold}\raisebox{-0.6ex}{\scalebox{2.2}{$\bullet$}}} \hspace{-2.25ex}{\color{black}\small\alph{enumii}}}
+
+%% \AtBeginDocument{
+%%   \renewcommand{\theenumii}{\Alph{enumii}}
+%% }
+
+\mode
+<all>

@@ -1,0 +1,45 @@
+\ProvidesPackage{beamer_defaults}
+
+\usefonttheme{professionalfonts} % turn off beamer's internal font rewriting
+\usepackage{xcolor}
+\usepackage{mypackages,mycommands}
+
+\setbeamertemplate{caption}[numbered]         %number figures
+
+\setbeamercolor{bibliography item}{fg=offwhite} % get rid of annoying colors in bibliography
+\setbeamercolor*{bibliography entry title}{fg=offwhite}
+\setbeamercolor*{bibliography entry author}{fg=offwhite}
+\setbeamercolor*{bibliography entry journal}{fg=offwhite}
+\setbeamercolor*{bibliography entry note}{fg=offwhite}
+\setbeamercolor*{bibliography entry location}{fg=offwhite}
+
+% for highlighting stuff on a slide
+% http://tex.stackexchange.com/questions/6135/how-to-make-beamer-overlays-with-tikz-node?
+\usetikzlibrary{arrows,shapes}
+\tikzstyle{every picture}+=[remember picture]
+\everymath{\displaystyle}
+\tikzstyle{na} = [baseline=-.5ex]
+\tikzset{onslide/.code args={<#1>#2}{%
+    \only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
+}}
+\tikzset{temporal/.code args={<#1>#2#3#4}{%
+    \temporal<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}{\pgfkeysalso{#4}} % \pgfkeysalso doesn't change the path
+  }}
+
+%define boxes
+\newcommand{\orangebox}[2]{
+\setbeamercolor{uppercol}{parent=palette tertiary} %fg=white,bg=pacificorange}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{\centering #1}  #2
+\end{beamerboxesrounded} }
+
+\newcommand{\figbox}[2]{
+  \begin{figure}
+    \orangebox{\vspace{-1.8ex}\caption{#1}\vspace{-1.95ex}}{
+      #2
+    }
+    \vspace{-2.65ex}
+  \end{figure}
+}
+
+\endinput
