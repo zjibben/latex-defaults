@@ -6,4 +6,7 @@
 *.log
 *.out
 *.xml
+*.nav
+*.snm
+*.toc
 src/auto/*
