@@ -58,20 +58,22 @@
   %\newcommand  {\dd}{\mathop{}\!\mathrm{d}}
   \newcommand  {\dd}{\mathrm{d}}
   \newcommand  {\abs}[1]{\left| #1 \right|}
-  \newcommand  {\√}[1]{ \sqrt{#1} }
-  \newcommand  {\∪} {\bigcup}
   
   \newcommand  {\A} {\mathcal{A}}
   \newcommand  {\I} {\mathcal{I}}
   \newcommand  {\K} {\mathcal{K}}
-  \renewcommand{\T} {\mathcal{T}}
+  \newcommand  {\T} {\mathcal{T}}
   \newcommand  {\W} {\mathcal{W}}
   \newcommand  {\X} {\mathcal{X}}
   
   \newcommand  {\CFL} {\mathrm{CFL}}
   
   \newcommand  {\atanh}{\mathrm{atanh}}
+  \ifxetex
   \renewcommand{\v}[1]{\symbf{#1}}
+  \else
+  \renewcommand{\v}[1]{\boldsymbol{#1}}
+  \fi
   \newcommand  {\nv}[1]{\hat{\v{#1}}}
   
   \newcommand  {\Dpart}[2]{\dfrac{\partial #1}{\partial #2}}

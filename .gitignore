@@ -9,4 +9,6 @@
 *.nav
 *.snm
 *.toc
-src/auto/*
+*.pdf
+article/auto/*
+beamer/auto/*
