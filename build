@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd article
+./build sample_article
+
+cd ../beamer
+./build sample_beamer

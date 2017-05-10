@@ -1,0 +1,10 @@
+#!/bin/bash
+
+doc=$1
+
+# compile .tex document
+rm *.bbl *.aux *.toc *.bcf *.out *.nav *.snm *.log *.blg *.vrb *.xml
+xelatex $doc.tex
+biber $doc
+xelatex $doc.tex
+xelatex $doc.tex
